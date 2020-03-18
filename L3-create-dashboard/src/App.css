@@ -1,0 +1,9 @@
+ .App {
+  text-align: center;
+  direction: rtl;
+}
+
+body{
+  direction: rtl;
+  text-align: right;
+}

@@ -31,7 +31,7 @@ class User extends React.Component {
         let { username, repos, lodaing } = this.state
         console.log('repository', repos, username);
 
-        if (lodaing) return (<div className="user-page">LOADING...</div>);
+        if (lodaing) return (<div className="user-page"></div>);
 
         return (
             <div>
@@ -42,7 +42,7 @@ class User extends React.Component {
                     repos.map(item => {
                         return (
                             <div className="showUserData" key={item.id}  >
-                                <h1>{item.name}</h1>
+                                <a href={item.html_url}><h1>{item.name}</h1> </a>
                                 <p>{item.description}</p>
                             </div>
                         )
