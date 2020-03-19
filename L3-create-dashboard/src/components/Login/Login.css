@@ -1,0 +1,39 @@
+ 
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+.login-form-forgot {
+    float: right;
+}
+.login-form-button {
+    width: 100%;
+}
+
+.login h1{
+    text-align: center;
+    margin-top: 100px;
+}
+
+.ant-checkbox-wrapper-checked{
+    float: left;
+}
+
+.Sign-up-now{
+    padding-top: 20px;
+    display: inline-block;
+}
+
+.ant-input-prefix{
+    margin-left: 5px;
+}
+
+.forget-password{
+    margin: 50px;
+}
+.forget-password h1 {
+    text-align: center;
+
+}
+

@@ -1,9 +1,18 @@
- .App {
-  text-align: center;
-  direction: rtl;
+
+
+
+
+@font-face {
+  font-family: IranSans;
+  src: url('./assets/font/eot/IRANSansWeb.eot');
+  src: url('./assets/font/woff2/IRANSansWeb.woff2') format('woff2'), url('./assets/font/ttf/IRANSansWeb.ttf') format('woff'), url('./assets/font/ttf/IRANSansWeb.ttf') format('truetype');
+  font-weight: normal;
 }
+
 
 body{
   direction: rtl;
+  font-family: IRANSans;
   text-align: right;
 }
+
