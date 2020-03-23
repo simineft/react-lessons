@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import {  Switch, Route,NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import "./Login.css"
 
 
@@ -9,7 +9,7 @@ const Login = (props) => {
     console.log('login', props)
     const onFinish = values => {
         console.log('Success:', values);
-        props.history.push('/SideBar')
+        props.history.push('/dashboard')
 
     };
 
@@ -66,7 +66,7 @@ const Login = (props) => {
                         ورود
                   </Button>
                
-                  یا  <NavLink  to="/register" className="Sign-up-now"   >همین حالا ثبت نام کن !</NavLink>
+                  یا  <NavLink  to="/register" className="Sign-up-now" >همین حالا ثبت نام کن !</NavLink>
                 </Form.Item>
             </Form>
 

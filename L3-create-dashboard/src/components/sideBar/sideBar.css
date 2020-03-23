@@ -1,0 +1,11 @@
+.users{
+  margin: 10px;
+  display: inline-block;
+  margin-right: 51px;
+  cursor: pointer;
+}
+
+.ant-menu-submenu-inline > .ant-menu-submenu-title .ant-menu-submenu-arrow{
+    right: 144px !important;
+}
+

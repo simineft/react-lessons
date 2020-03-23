@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
-
+import React, { Component } from 'react';
+import { Layout } from 'antd';
 import { List, Avatar } from 'antd';
+import SideBar from "../sideBar/sideBar"
+import Navbar from '../navBar/navbar';
 
 const data = [
   {
@@ -17,25 +19,38 @@ const data = [
   },
 ];
 
-export default class UserList extends Component {
-  render() {
-    return (
-      <div>
-        <List
-          itemLayout="horizontal"
-          dataSource={data}
-          renderItem={item => (
-            <List.Item>
-              <List.Item.Meta
-                avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
-                title={<a href="https://ant.design">{item.title}</a>}
-                description="Ant Design, a design language for background applications, is refined by Ant UED Team"
-              />
-            </List.Item>
-          )}
-        />
 
-      </div>
+
+export default class UserList extends Component {
+
+
+  render() {
+    console.log("userlist",this.props);
+    
+    return (
+      <>
+        <Layout>
+          {/* <Navbar/>  */}
+          <Layout>
+             {/* <SideBar/>  */}
+            <List
+              itemLayout="horizontal"
+              dataSource={data}
+              renderItem={item => (
+                <List.Item>
+                  <List.Item.Meta
+                    avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+                    title={<a href="https://ant.design">{item.title}</a>}
+                    description="description"
+                  />
+                </List.Item>
+              )}
+            />
+          </Layout>
+        </Layout>
+       
+
+      </>
     )
   }
 }
