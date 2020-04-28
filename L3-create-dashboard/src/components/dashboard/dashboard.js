@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
-import 'antd/dist/antd.css'
-import "./dashboard.css"
+import {Route} from 'react-router-dom';
 import Navbar from "../navBar/navbar"
 import SideBar from "../sideBar/sideBar"
 import ContentDashboard from "../content/content"
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import UserList from "../UserList/UserList";
+import 'antd/dist/antd.css'
+import "./dashboard.css"
 
 
 const { Content } = Layout;
@@ -36,17 +36,19 @@ class Dashboard extends Component {
                      <Content
                         className="site-layout-background"
                         style={{
-                           margin: '24px 16px',
+                           margin: '24px  16px  0',
                            padding: 24,
                            minHeight: 280,
+                            overflow: 'initial'
                         }}
                      >
-                        <Router>
-                           <Switch>
-                              <Route path='/dashboard/userList' exact component={UserList} />
-                           </Switch>
-                        </Router>
-                     </Content>
+                        <div className="site-layout-background"  style={{ padding: 24, textAlign: 'center' }}     >
+
+                           <Route path='/dashboard/userList' exact component={UserList} />
+
+                        </div>
+
+                     </Content> 
                   </Layout>
                </Content>
             </Layout>

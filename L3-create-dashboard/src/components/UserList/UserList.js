@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Layout } from 'antd';
 import { List, Avatar } from 'antd';
-import SideBar from "../sideBar/sideBar"
-import Navbar from '../navBar/navbar';
+
 
 const data = [
   {
@@ -30,9 +29,7 @@ export default class UserList extends Component {
     return (
       <>
         <Layout>
-          {/* <Navbar/>  */}
           <Layout>
-             {/* <SideBar/>  */}
             <List
               itemLayout="horizontal"
               dataSource={data}
@@ -48,8 +45,6 @@ export default class UserList extends Component {
             />
           </Layout>
         </Layout>
-       
-
       </>
     )
   }

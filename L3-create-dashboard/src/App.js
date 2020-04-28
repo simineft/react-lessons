@@ -4,8 +4,6 @@ import Dashboard from "./components/dashboard/dashboard";
 import Login from "./components/Login/login";
 import Register from "./components/Register/Register";
 import ForgetPassword from "./components/forgetPassword/forgetPassword";
-import UserList from "./components/UserList/UserList";
- 
 import './App.css';
 
 

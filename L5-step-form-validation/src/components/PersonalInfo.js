@@ -38,13 +38,20 @@ class PersonalInfo extends Component {
 
     }
 
+    //code dovome be sarti ejra
     validIranianNationalCode = ({ target: { value, name } }) => {
-        if (!this.isValidIranianNationalCode(value)) {
-            this.setState({
-                [name]: value.length >= 11 ? null : `${name} must be longer than 11 digit`
-            });
-        }
+        if (value.length >= 10) return;
+        let errors = {};
+
+        !this.isValidIranianNationalCode(value) && (errors = { [name]: "this is not vaild naionalCode" });
+        (value.length < 11) && (errors = { [name]: "must be 10 digit" });
+
+        this.setState({
+            errors: { ...this.state.errors, ...errors }
+        })
+
     }
+    
 
     isValidIranianNationalCode = (value) => {
         if (!/^\d{10}$/.test(value))
@@ -53,6 +60,10 @@ class PersonalInfo extends Component {
         var sum = Array(9).fill().map((_, i) => +value[i] * (10 - i)).reduce((x, y) => x + y) % 11;
         return (sum < 2 && check == sum) || (sum >= 2 && check + sum == 11);
     }
+
+ 
+
+
 
     switchLanguage = (e) => {
         e.preventDefault();
@@ -100,7 +111,7 @@ class PersonalInfo extends Component {
                     </div>
                     {
                         this.state.errors.firstName &&
-                        <div className="error"    >
+                        <div className="error" >
                             {this.state.errors.firstName}
                         </div>
                     }
@@ -130,6 +141,7 @@ class PersonalInfo extends Component {
                         <label>  کدملی: </label>
                         <input
                             type="text"
+                             maxLength="10"
                             name="nationalCode"
                             value={nationalCode}
                             placeholder="کد ملی"
@@ -140,9 +152,9 @@ class PersonalInfo extends Component {
 
                     </div>
                     {
-                        this.state.nationalCode &&
+                        this.state.errors.nationalCode &&
                         <div className="error" >
-                            {this.state.nationalCode}
+                            {this.state.errors.nationalCode}
                         </div>
                     }
 
