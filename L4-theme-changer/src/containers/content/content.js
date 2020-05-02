@@ -1,17 +1,14 @@
 import React from 'react';
-import { Button } from "../../components/Buttons";
-import { connect } from "react-redux";
+import{  Button}  from "../../components/Buttons";
 import "./content.css";
 
-const Content = (props) => {
-  const { button } = props;
+const Content = ({properties, component}) => {
   return (
     <div className="content">
-      <Button {...button}>Click me!</Button>
+      {/* <Button style={properties}>Click me!</Button> */}
+      {component ? component(properties) : null}
     </div>
   )
 }
 
-export default connect(
-  state => ({ button: state.styles.button })
-)(Content)
+export default Content;
