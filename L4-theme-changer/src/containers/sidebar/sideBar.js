@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { connect } from "react-redux";
-import { changeStyle } from "../../actions";
-// import Accordion from "../../components/accordion/accordion"
+ import Accordion from "../../components/accordion/accordion"
 import "./sideBar.css";
 
 const propertiesInputs = new Map([
@@ -47,27 +45,76 @@ const SideBar = ({changeProperties, changeComponent, components}) => {
   return (
     <div className="sidebar">
       <div className="app">
-        <h1>components</h1>
-          <ul>
-            {components.map(c => {
-              return <li onClick={setComponent}> {c} </li>
-            })}
-          </ul>
-          <div label="button">
+        <h1>components</h1>   
+        <Accordion>
+          <div label="button"  isOpen>
             <div>
-              {elements}
-              {/* {propertiesInputs.map((property) => {
-                return <div className="form-input" >
-                  <label>{property}</label>
-                  <input name={property} value={properties[property]} onChange={setValue} />
-                </div>
-              })} */}
-           
+              <div className="form-input"   >
+                <label>Background:</label>
+                <input name="background"  onChange={setValue} />
+              </div>
+              <div className="form-input"  >
+                <label>Text color:</label>
+                <input type="color"  name="color"  onChange={setValue} />
+              </div>
+              <div className="form-input">
+                <label>padding:</label>
+                <input type="number"  name="padding"  onChange={setValue} />
+              </div>
+              <div className="form-input"  >
+                <label>font-size:</label>
+                <input type="number"   name="font-size" />
+              </div>
+              <div className="form-input"  >
+                <label> border-radius:</label>
+                <input  type="number"  name="borderradius"  onChange={setValue} />
+              </div>
+              <div className="form-input" >
+                <label> border:</label>
+                <input type="number"   name="border" />
+              </div>
+              <div className="form-input" >
+                <label>margin:</label>
+                <input type="number"   name="margin" />
+              </div>
             </div>
-           
+            
 
           </div>
-         
+          <div label="input">
+            <div>
+              <div className="form-input"   >
+                <label>Background:</label>
+                <input name="background" onChange={setValue} />
+              </div>
+              <div className="form-input"  >
+                <label>Text color:</label>
+                <input name="color"  onChange={setValue} />
+              </div>
+              <div className="form-input">
+                <label>padding:</label>
+                <input name="padding"  onChange={setValue} />
+              </div>
+              <div className="form-input"  >
+                <label>font-size:</label>
+                <input name="font-size" />
+              </div>
+              <div className="form-input"  >
+                <label> border-radius:</label>
+                <input name="borderradius" onChange={setValue} />
+              </div>
+              <div className="form-input"   >
+                <label> border:</label>
+                <input name="border" />
+              </div>
+              <div className="form-input" >
+                <label>margin:</label>
+                <input name="margin" />
+              </div>
+            </div>
+           
+          </div>  
+        </Accordion>
        
 
       </div>

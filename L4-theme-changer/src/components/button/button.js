@@ -50,7 +50,7 @@ const Button = (props) => {
             <div>
               <div className="form-input"   >
                 <label>Background:</label>
-                <input name="background" value={background} onChange={setValue} />
+                <input name="background"  onChange={setValue} />
               </div>
               <div className="form-input"  >
                 <label>Text color:</label>
@@ -77,10 +77,10 @@ const Button = (props) => {
                 <input name="margin" />
               </div>
             </div>
-            <button onClick={() => update({ background, color, padding, borderradius }, "button")}>Update</button>
+            
 
           </div>
-          {/* <div label="input">
+          <div label="input">
             <div>
               <div className="form-input"   >
                 <label>Background:</label>
@@ -112,7 +112,7 @@ const Button = (props) => {
               </div>
             </div>
             <button onClick={() => update({ background, color, padding, borderradius }, "button")}>Update</button>
-          </div> */}
+          </div>  
         </Accordion>
 
       </div>
